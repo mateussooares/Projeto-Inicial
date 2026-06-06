@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================
+   HEADER
+================== */
+
+header {
+  font-family: "Syne", sans-serif;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("/assets/img/hero/img-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.nav-bar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+
+  gap: 32px;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 16px 24px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #6b6255;
+
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #c9a96e;
+  transform: scale(1.05);
+}
+
+.nav-contact {
+  /* From https://css.glass */
+  background: rgba(227, 224, 217, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+}
+
+/* ==================
+   HERO
+================== */
+
+.hero {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.hero-brand img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  display: block;
+  transform: translateY(300px);
+}
+
+/*.hero-title {
+  font-family: "Sora", sans-serif;
+  text-align: center;
+}
+
+.hero-title h1 {
+  font-size: 96px;
+  font-weight: 600;
+  color: #c9c2ba;
+}
+
+.hero-title p {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: #c9c2ba;
+}*/
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+  .nav-menu {
+    gap: 16px;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+    font-size: 18px;
+  }
+
+  .hero-brand img {
+    transform: translateY(180px);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-brand img {
+    transform: translateY(150px);
+  }
+}
