@@ -94,23 +94,71 @@ header {
   transform: translateY(300px);
 }
 
-/*.hero-title {
-  font-family: "Sora", sans-serif;
-  text-align: center;
+/* =========================
+   SESSÃO RESPIRO
+========================= */
+
+.respiro {
+  min-height: 150vh;
+  background-color: #d2c8c9;
+  border-top: 4px solid #eee8e9;
+
+  view-timeline-name: --respiro-scroll;
+  view-timeline-axis: block;
 }
 
-.hero-title h1 {
-  font-size: 96px;
-  font-weight: 600;
-  color: #c9c2ba;
+.respiro-sticky {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
 }
 
-.hero-title p {
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: 4px;
-  color: #c9c2ba;
-}*/
+.respiro-img {
+  display: block;
+  width: 525px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes lens-reveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@supports (animation-timeline: --respiro-scroll) {
+  .respiro-img {
+    animation: lens-reveal linear both;
+    animation-timeline: --respiro-scroll;
+    animation-range: cover 0% cover 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .respiro-img {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* =========================
    RESPONSIVIDADE
